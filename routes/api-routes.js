@@ -1,6 +1,5 @@
 // var db = require("../modules");
 
-
 module.exports = function (app) {
     app.get('/api/customers', (req, res) => {
         const customers = [
@@ -11,5 +10,15 @@ module.exports = function (app) {
         
         res.json(customers);
     })
+    
+    app.get('/hamad', (req, res) => {
+        customers.all(function (data) {
+            var aaa = {
+                cats: data
+            };
+            console.log(aaa);
+            res.json(aaa);
+        });
+    });    
     
 };
