@@ -6,7 +6,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "12345678",
-    database: "nodemysql"
+    database: "carpool_db"
 });
 
 // Connect to the database
