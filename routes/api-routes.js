@@ -7,18 +7,7 @@ module.exports = function (app) {
             { id: 2, firstName: 'Steve', lastName: 'Smith' },
             { id: 3, firstName: 'Mary', lastName: 'Swanson' }
         ];
-        
         res.json(customers);
-    })
-    
-    app.get('/hamad', (req, res) => {
-        customers.all(function (data) {
-            var aaa = {
-                cats: data
-            };
-            console.log(aaa);
-            res.json(aaa);
-        });
-    });    
-    
+        
+    })   
 };
