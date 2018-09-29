@@ -1,4 +1,4 @@
-// var db = require("../modules");
+var db = require("../config/connection");
 
 module.exports = function (app) {
     app.get('/api/customers', (req, res) => {
@@ -8,6 +8,16 @@ module.exports = function (app) {
             { id: 3, firstName: 'Mary', lastName: 'Swanson' }
         ];
         res.json(customers);
+        
+    })   
+
+    app.get('/api/drivers', (req, res) => {
+        const drivers = [
+            { id: 4, firstName: 'John', lastName: 'Doe' },
+            { id: 5, firstName: 'Steve', lastName: 'Smith' },
+            { id: 6, firstName: 'Mary', lastName: 'Swanson' }
+        ];
+        res.json(drivers);
         
     })   
 };

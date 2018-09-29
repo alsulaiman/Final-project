@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Customers from './components/customers/customers';
+import Search from './components/search/search';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <h1 className="App-title">Carpool</h1>
         </header>
         <Customers />
+        <Search />
       </div>
     );
   }

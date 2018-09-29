@@ -1,23 +1,31 @@
-const db = require("../config/connection.js");
+const db = require("../config/connection");
 
 module.exports = function (app) {
     app.get('/getdrivers', (req, res) => {
-        let sql = `SELECT * FROM drivers;`;
+        let sql = `SELECT * FROM drivers`;
         db.query(sql, (err, results) => {
             if (err) throw err;
             console.log(results);
-            res.send('Customers fetched...');
+            res.send('Drivers fetched...');
         });
     });
 
-    // app.get('/customer/:id', (req, res) => {
-    //     let sql = `SELECT * FROM customers WHERE id = ${req.params.id}`;
-    //     db.query(sql, (err, result) => {
-    //         if (err) throw err;
-    //         console.log(result);
-    //         res.send('Customer one fetched...');
-    //     });
-    // });
+    app.get('/gettrips', (req, res) => {
+        let sql = `SELECT * FROM trips`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            console.log(results);
+            res.send('Trips fetched...');
+        });
+    });
 
+    app.get('/getriders', (req, res) => {
+        let sql = `SELECT * FROM riders`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            console.log(results);
+            res.send('Riders fetched...');
+        });
+    });
 } 
 
