@@ -45,3 +45,20 @@ CREATE TABLE history (
     FOREIGN KEY (trip_id) REFERENCES trips(trip_id),
     FOREIGN KEY (rider_id) REFERENCES riders(rider_id)
 );
+
+INSERT INTO drivers (driver_name, car, rating, email_address, driver_password, profile_img) 
+VALUES ('ali', 'camry', 4, 'asd@gmail.com', '12345678', 'img.jpg'),
+('hamad', 'camry', 3, 'dsa@gmail.com', '12345678', 'img.jpg'),
+('john', 'camry', 5, 'agth@gmail.com', '12345678', 'img.jpg');
+
+INSERT INTO trips (driver_id, pickup_location, destination, trip_date, trip_time, price) 
+VALUES (2, '100 City Centre Dr, Mississauga, ON L5B 2C9', '252 Bloor St', '2018-10-11', '08:00', 15),
+(3, '941 Progress Ave, Scarborough, ON M1G 3T8', '252 Bloor St', '2018-10-11', '08:00', 20);
+
+INSERT INTO riders (rider_name, rating, email_address, rider_password, profile_img) 
+VALUES ('Sara', 4, 'sara@gmail.com', '12345678', 'img.jpg'),
+('Ali', 4, 'ali@gmail.com', '12345678', 'img.jpg'); 
+
+INSERT INTO history (trip_id, rider_id) 
+VALUES (1, 1),
+(2, 1); 
