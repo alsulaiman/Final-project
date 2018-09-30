@@ -1,23 +1,35 @@
 var db = require("../config/connection");
 
 module.exports = function (app) {
-    // app.get('/api/customers', (req, res) => {
-    //     const customers = [
-    //         { id: 1, firstName: 'John', lastName: 'Doe' },
-    //         { id: 2, firstName: 'Steve', lastName: 'Smith' },
-    //         { id: 3, firstName: 'Mary', lastName: 'Swanson' }
-    //     ];
-    //     res.json(customers);
-        
-    // })   
-
     app.get('/api/drivers', (req, res) => {
-        const drivers = [
-            { id: 4, firstName: 'John', lastName: 'Doe' },
-            { id: 5, firstName: 'Steve', lastName: 'Smith' },
-            { id: 6, firstName: 'Mary', lastName: 'Swanson' }
-        ];
-        res.json(drivers);
-        
-    })   
+        let sql = `SELECT * FROM drivers`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            res.send(results);
+        });
+    });
+
+    app.get('/api/trips', (req, res) => {
+        let sql = `SELECT * FROM trips`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            res.send(results);
+        });
+    });
+
+    app.get('/api/riders', (req, res) => {
+        let sql = `SELECT * FROM riders`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            res.send(results);
+        });
+    });
+
+    app.get('/api/history', (req, res) => {
+        let sql = `SELECT * FROM history`;
+        db.query(sql, (err, results) => {
+            if (err) throw err;
+            res.send(results);
+        });
+    });
 };

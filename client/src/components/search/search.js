@@ -10,19 +10,19 @@ class Drivers extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/drivers')
-            .then(res => res.json())
-            .then(drivers => this.setState({ drivers }, () => console.log('Drivers fetched..')));
+        fetch('/api/tirps')
+            // .then(res => res.json())
+            // .then(trips => this.setState({ trips }, () => console.log(trips)));
     }
 
     render() {
         return (
             <div>
-                <h2>Drivers</h2>
+                <h2>trips</h2>
                 <ul>
-                    {this.state.drivers.map(driver =>
+                    {/* {this.state.drivers.map(driver =>
                         <li key={driver.id}> {driver.firstName} {driver.lastName} </li>
-                    )}
+                    )} */}
                 </ul>
             </div>
         );

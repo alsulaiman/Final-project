@@ -15,7 +15,7 @@ module.exports = function (app) {
         db.query(sql, (err, results) => {
             if (err) throw err;
             console.log(results);
-            res.send('Trips fetched...');
+            res.send(results);
         });
     });
 
