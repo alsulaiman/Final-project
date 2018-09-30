@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Customers from './components/customers/customers';
 import Search from './components/search/search';
 
 class App extends Component {
@@ -10,7 +9,6 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Carpool</h1>
         </header>
-        {/* <Customers /> */}
         <Search />
       </div>
     );
